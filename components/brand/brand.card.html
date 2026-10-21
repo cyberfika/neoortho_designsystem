@@ -1,0 +1,26 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Brand" subtitle="Logo, PositioningBar, EllipseFrame, SectionEyebrow" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"></head><body style="margin:0;padding:0;background:#fff"><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Logo, PositioningBar, EllipseFrame, EllipseOutline, SectionEyebrow } = window.NeoOrthoDesignSystem_c2825f;
+function Demo(){return(<div>
+  <div style={{padding:'20px 24px',display:'flex',gap:32,alignItems:'center',flexWrap:'wrap'}}>
+    <Logo version="color-medartis" width={200} assetBase="../.."/>
+    <Logo version="black" width={140} assetBase="../.."/>
+    <Logo version="symbol-color" width={44} assetBase="../.."/>
+  </div>
+  <div style={{padding:'0 24px 16px'}}><SectionEyebrow number="03.">Nosso portfólio</SectionEyebrow></div>
+  <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:0,alignItems:'stretch'}}>
+    <div style={{position:'relative',overflow:'hidden',background:'var(--gray-100)'}}>
+      <img src="../../assets/photos/photo-hands.png" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+      <EllipseOutline width="140%" left="-20%" top="-14%" thickness={2}/>
+    </div>
+    <EllipseFrame src="../../assets/photos/photo-new-factory.png" ratio="16 / 10" style={{background:'var(--gray-100)'}}/>
+  </div>
+  <PositioningBar assetBase="../.." align="between" height={84}/>
+</div>);}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script></body></html>

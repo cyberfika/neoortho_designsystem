@@ -1,0 +1,18 @@
+<!-- @dsCard group="Slides" viewport="1280x720" name="Deck completo" subtitle="12 slide types, arrow keys to navigate" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>NeoOrtho — modelo de apresentação</title><link rel="stylesheet" href="../styles.css"><style>html,body{margin:0;padding:0;background:#1a1024;overflow:hidden}#root{width:1280px;height:720px}.nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(39,20,76,.82);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 14px;font-family:var(--font-body);color:#fff;font-size:13px;z-index:10}.nav button{background:rgba(255,255,255,.14);border:none;color:#fff;width:30px;height:30px;border-radius:999px;cursor:pointer;font-size:15px}.nav button:hover{background:rgba(255,255,255,.26)}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<script type="text/babel">
+const NS = window.NeoOrthoDesignSystem_c2825f;
+const ORDER = ["TitleSlide","IntroSlide","StatsSlide","ManifestoSlide","ValuesSlide","SectionSlide","TimelineSlide","PhotoStatSlide","PortfolioSlide","CertificationsSlide","PresenceSlide","ClosingSlide"];
+function Deck(){
+  const [i,setI]=React.useState(0);
+  const go=React.useCallback(d=>setI(v=>Math.min(ORDER.length-1,Math.max(0,v+d))),[]);
+  React.useEffect(()=>{const h=e=>{if(e.key==='ArrowRight'||e.key===' ')go(1);if(e.key==='ArrowLeft')go(-1)};window.addEventListener('keydown',h);return()=>window.removeEventListener('keydown',h)},[go]);
+  const Slide = NS[ORDER[i]];
+  return (<div><Slide/><div className="nav"><button onClick={()=>go(-1)}>‹</button><span>{String(i+1).padStart(2,'0')} / {ORDER.length} · {ORDER[i]}</span><button onClick={()=>go(1)}>›</button></div></div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Deck/>);
+</script></body></html>

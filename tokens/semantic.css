@@ -1,0 +1,40 @@
+/* Semantic aliases — always prefer these in product code. */
+:root{
+  --brand:var(--purple-700);
+  --brand-deep:var(--purple-900);
+  --brand-bright:var(--purple-light);
+  --accent:var(--teal-500);
+  --accent-soft:var(--mint-300);
+
+  --surface-page:var(--white);
+  --surface-muted:var(--gray-100);
+  --surface-card:var(--white);
+  --surface-inverse:var(--purple-700);
+  --surface-inverse-deep:var(--purple-900);
+  --surface-field:var(--gradient-light-field); /* @kind other */
+
+  --text-body:var(--gray-800);
+  --text-strong:var(--black);
+  --text-muted:#6b6b72;
+  --text-on-inverse:var(--white);
+  --text-on-inverse-muted:rgba(255,255,255,.72);
+  --text-link:var(--purple-700);
+  --text-link-hover:var(--purple-vivid);
+  --text-accent:var(--teal-500);
+
+  /* Interaction: the brandbook's rule is 20% tint steps — hover lightens by one
+     step on solid surfaces, and press goes one step darker. No scale transforms. */
+  --action-primary-bg:var(--purple-700);
+  --action-primary-bg-hover:var(--purple-600);
+  --action-primary-bg-active:var(--purple-800);
+  --action-primary-fg:var(--white);
+  --action-secondary-border:var(--purple-700);
+  --action-secondary-fg:var(--purple-700);
+  --action-secondary-bg-hover:var(--purple-700-20);
+  --action-accent-bg:var(--teal-500);
+  --action-accent-bg-hover:var(--teal-500-80);
+  --action-disabled-bg:var(--gray-200);
+  --action-disabled-fg:#8e8e94;
+}
+a{color:var(--text-link);text-decoration:none}
+a:hover{color:var(--text-link-hover);text-decoration:underline}

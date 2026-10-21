@@ -1,0 +1,29 @@
+/* Spacing — 4px base. --space-brand-clear is the logo respiro:
+   minimum negative space around the logo equals the height of the logotype's "O". */
+:root{
+  --space-0:0px;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
+  --space-12:48px;
+  --space-16:64px;
+  --space-20:80px;
+  --space-24:96px;
+
+  --gutter-page:clamp(24px,5vw,80px); /* @kind spacing */
+  --max-measure:66ch; /* @kind spacing */
+
+  /* Logo protection area — never less than the cap height of the "O" */
+  --space-brand-clear:1em;
+
+  /* Minimum logo widths from the brandbook (009) */
+  --logo-min-digital:110px;      /* preferential lockup, screen */
+  --logo-min-digital-reduced:70px; /* reduced lockup, screen */
+  --logo-min-print:40mm; /* @kind spacing */
+  --logo-min-print-reduced:25mm; /* @kind spacing */
+}

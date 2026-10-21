@@ -1,0 +1,40 @@
+/* Effects — radii, elevation, gradients, motion.
+   The brand's graphic element is the central ellipse of the symbol, so NeoOrtho
+   geometry is soft and capsular: pills and generous radii, never sharp chamfers.
+   Note: the brandbook forbids shadows/glows ON THE LOGO. UI elevation is fine,
+   but keep it low and neutral — no colored glows. */
+:root{
+  --radius-xs:4px;
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:20px;
+  --radius-xl:32px;
+  --radius-pill:999px;
+  --radius-ellipse:50%; /* @kind radius */
+
+  --border-hairline:1px; /* @kind spacing */
+  --border-thick:2px; /* @kind spacing */
+  --border-color:var(--gray-200);
+  --border-on-purple:rgba(255,255,255,.28);
+
+  --shadow-sm:0 1px 2px rgba(39,20,76,.08);
+  --shadow-md:0 4px 16px rgba(39,20,76,.10);
+  --shadow-lg:0 12px 40px rgba(39,20,76,.14);
+  --shadow-inset-top:inset 0 1px 0 rgba(255,255,255,.18);
+  --focus-ring:0 0 0 3px rgba(122,93,214,.45);
+
+  /* Signature gradients, lifted from the brand wallpapers and slide masters */
+  --gradient-purple-deep:radial-gradient(120% 140% at 18% 40%,#6b3f9c 0%,#582c83 42%,#3b2368 72%,#27144c 100%); /* @kind other */
+  --gradient-purple-pill:linear-gradient(90deg,#731ea0 0%,#ad60ea 55%,#ded4e6 100%); /* @kind other */
+  --gradient-light-field:linear-gradient(135deg,#ebebeb 0%,#eeecf1 62%,#ded4e6 100%); /* @kind other */
+  --gradient-protection:linear-gradient(180deg,rgba(39,20,76,0) 0%,rgba(39,20,76,.72) 100%); /* @kind other */
+
+  /* Motion — calm, continuous, "viver em movimento". No bounce, no overshoot. */
+  --ease-standard:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --ease-out:cubic-bezier(0,0,.2,1); /* @kind other */
+  --ease-in-out-slow:cubic-bezier(.65,0,.35,1); /* @kind other */
+  --duration-fast:140ms; /* @kind other */
+  --duration-base:240ms; /* @kind other */
+  --duration-slow:480ms; /* @kind other */
+  --duration-ambient:1200ms; /* @kind other */
+}

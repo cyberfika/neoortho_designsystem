@@ -1,0 +1,44 @@
+<!-- @dsCard group="Website" viewport="1280x900" name="neoortho.com.br" subtitle="Marketing site recreation — hero, portfolio, quality, contact" -->
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>NeoOrtho — Viver em movimento.</title><link rel="stylesheet" href="../../styles.css"><style>html,body{margin:0;padding:0;background:var(--white)}#root{min-height:100vh}.sheet{position:fixed;inset:0;background:rgba(39,20,76,.55);display:grid;place-items:center;z-index:40}</style></head><body><div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const NS = window.NeoOrthoDesignSystem_c2825f;
+const { SiteHeader, Hero, StatsStrip, PortfolioGrid, ManifestoBand, ResourcesBand, QualityBand, FactoryBand, ContactForm, SiteFooter, Tag, Button, Card, IconButton } = NS;
+function App(){
+  const [active,setActive]=React.useState('Traumatologia');
+  const [sel,setSel]=React.useState(null);
+  React.useEffect(()=>{
+    const h=e=>{if(e.key==='Escape')setSel(null)};
+    window.addEventListener('keydown',h);return()=>window.removeEventListener('keydown',h);
+  },[]);
+  return (<div>
+    <SiteHeader active={active} onNav={setActive}/>
+    <Hero/>
+    <StatsStrip/>
+    <PortfolioGrid onSelect={setSel}/>
+    <ManifestoBand/>
+    <ResourcesBand/>
+    <QualityBand/>
+    <FactoryBand/>
+    <ContactForm/>
+    <SiteFooter/>
+    {sel && (<div className="sheet" onClick={()=>setSel(null)}>
+      <Card padding="0" style={{width:760,overflow:'hidden'}} onClick={e=>e.stopPropagation()}>
+        <div style={{display:'grid',gridTemplateColumns:'300px 1fr'}}>
+          <div style={{background:'var(--gray-100)',display:'grid',placeItems:'center',padding:24}}><img src={sel.img} alt={sel.name} style={{maxHeight:300,maxWidth:'100%',objectFit:'contain'}}/></div>
+          <div style={{padding:'32px 32px 28px',display:'flex',flexDirection:'column',gap:16}}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}><Tag line={sel.tag}>{sel.name}</Tag><IconButton label="Fechar" onClick={()=>setSel(null)}>✕</IconButton></div>
+            <h3 style={{margin:0,fontFamily:'var(--font-display)',fontWeight:600,fontSize:30,letterSpacing:'-.02em',color:'var(--text-strong)'}}>Linha {sel.name}</h3>
+            <p style={{margin:0,fontSize:16,lineHeight:1.6}}>{sel.body}</p><p style={{margin:0,fontSize:14,lineHeight:1.6,color:'var(--text-muted)'}}>{sel.sub}. Usinados em titânio puro ou liga conforme a região de aplicação, sob sistema de gestão da qualidade certificado ISO 13485:2016.</p>
+            <div style={{display:'flex',gap:12,marginTop:8}}><Button size="sm">Solicitar catálogo</Button><Button size="sm" variant="ghost">Ver IFU</Button><Button size="sm" variant="secondary" onClick={()=>setSel(null)}>Voltar</Button></div>
+          </div>
+        </div>
+      </Card>
+    </div>)}
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

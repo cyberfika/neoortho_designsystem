@@ -1,0 +1,51 @@
+/* NeoOrtho color system — Manual de Design Corporativo NeoOrtho, Jan 2026.
+   Every value here is quoted verbatim from the brandbook. Never eyedrop; use these codes. */
+:root{
+  /* ---- Roxo institucional (PANTONE 268 C) and its expanded tones ---- */
+  --purple-900:#27144c; /* RGB 39,20,76   */
+  --purple-800:#3b2368; /* RGB 59,35,104  */
+  --purple-700:#582c83; /* PANTONE 268 C — RGB 88,44,131. THE brand purple */
+  --purple-600:#6951b9; /* RGB 105,81,185 */
+  --purple-500:#7a5dd6; /* RGB 122,93,214 */
+  --purple-vivid:#731ea0; /* RGB 115,30,160 */
+  --purple-light:#ad60ea; /* RGB 173,96,234 */
+
+  /* ---- Azul institucional (PANTONE 7466 C) ---- */
+  --teal-500:#00b0b9; /* RGB 0,176,185 */
+  --mint-300:#84e9a7; /* RGB 132,233,167 */
+
+  /* ---- Cinza de apoio (PANTONE COOL GRAY 1 C) ---- */
+  --gray-200:#d9d9d6; /* RGB 217,217,214 */
+
+  /* Neutrals used across brand applications (email signature, slide masters) */
+  --black:#111111;
+  --gray-800:#333333;
+  --gray-100:#ebebeb; /* light slide field */
+  --white:#ffffff;
+
+  /* ---- Product line colors ---- */
+  --line-trauma:#731ea0;
+  --line-coluna:#ad60ea;
+  --line-cmf:#00b0b9;
+  --line-custom:#84e9a7;
+
+}
+/* Matizes: the brandbook mandates 20% steps of the brand colors.
+   Any tint below 60% must carry dark text. */
+:root{
+  --purple-700-100:#582c83;
+  --purple-700-80:#7a569c;
+  --purple-700-60:#9b80b4;
+  --purple-700-40:#bcaacd;
+  --purple-700-20:#ded4e6;
+  --teal-500-100:#00b0b9;
+  --teal-500-80:#33c0c7;
+  --teal-500-60:#66d0d5;
+  --teal-500-40:#99dfe3;
+  --teal-500-20:#cceff1;
+  --purple-light-100:#ad60ea;
+  --purple-light-80:#bd80ee;
+  --purple-light-60:#cea0f2;
+  --purple-light-40:#debff6;
+  --purple-light-20:#efdffb;
+}

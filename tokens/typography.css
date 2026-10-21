@@ -1,0 +1,36 @@
+/* Typography — Area Normal for títulos, Poppins for textos (brandbook 016–018). */
+:root{
+  --font-display:"Area Normal","Poppins",system-ui,sans-serif;
+  --font-body:"Poppins",system-ui,sans-serif;
+
+  --weight-thin:100;
+  --weight-regular:400;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --weight-extrabold:800;
+  --weight-black:900;
+
+  /* Display scale (Area Normal SemiBold is the workhorse for titles) */
+  --text-display-1:clamp(48px,7vw,96px);
+  --text-display-2:clamp(40px,5vw,68px);
+  --text-display-3:clamp(30px,3.4vw,44px);
+  --text-title:28px;
+  --text-subtitle:22px;
+
+  /* Body scale (Poppins) */
+  --text-lg:18px;
+  --text-base:16px;
+  --text-sm:14px;
+  --text-xs:13px;
+  --text-caption:11px;
+
+  --leading-tight:1.05;
+  --leading-title:1.15;
+  --leading-snug:1.35;
+  --leading-body:1.6;
+
+  --tracking-tight:-0.02em;
+  --tracking-normal:0;
+  --tracking-wide:0.04em;
+  --tracking-caps:0.12em; /* section eyebrows / EXCELÊNCIA-style labels */
+}
